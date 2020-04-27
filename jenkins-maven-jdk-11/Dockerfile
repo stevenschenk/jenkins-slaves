@@ -1,6 +1,6 @@
 FROM maven:3.6.3-jdk-11-slim
 
-RUN apt-get update -y && apt-get install -y curl sudo
+RUN apt-get update -y && apt-get install -y curl sudo && apt-get install -y git
 
 #Install docker
 RUN curl -sSL https://get.docker.com/ | sh
