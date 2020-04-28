@@ -6,7 +6,7 @@ node('jenkins-slave') {
 
     stage('building docker image') {
         sh(script: """
-            docker build -t localhost:32000/jenkins-slave-maven-jdk-11:latest .
+            docker build -t localhost:32000/jenkins-slave-maven-jdk-11:latest ./jenkins-maven-jdk-11
             docker push localhost:32000/jenkins-slave-maven-jdk-11:latest
         """)
     }
