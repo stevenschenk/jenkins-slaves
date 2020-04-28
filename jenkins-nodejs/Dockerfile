@@ -3,7 +3,7 @@ FROM openjdk:11-jdk-slim
 RUN apt-get update -y && apt-get install -y git-core && apt-get install -y curl sudo 
 
 RUN apt-get -y install curl gnupg \
-    && curl -sL https://deb.nodesource.com/setup_11.x  | bash - \
+    && curl -sL https://deb.nodesource.com/setup_14.x  | bash - \
     && apt-get -y install nodejs
 
 #Install docker
