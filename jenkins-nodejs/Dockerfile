@@ -1,6 +1,10 @@
-FROM node:14.0-stretch-slim
+FROM openjdk:11-jre-slim
 
-RUN apt-get update -y && apt-get install -y git-core && apt-get install -y openjdk-8-jre && apt-get install -y curl sudo 
+RUN apt-get update -y && apt-get install -y git-core && apt-get install -y curl sudo 
+
+RUN apt-get -y install curl gnupg \
+    && curl -sL https://deb.nodesource.com/setup_11.x  | bash - \
+    && apt-get -y install nodejs
 
 #Install docker
 RUN curl -sSL https://get.docker.com/ | sh
