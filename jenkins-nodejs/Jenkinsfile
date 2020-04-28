@@ -1,0 +1,13 @@
+node('jenkins-slave') {
+
+    stage('checkout scm') {
+        checkout scm
+    }
+
+    stage('building docker image') {
+        sh(script: """
+            docker build -t localhost:32000/jenkins-slave-node:latest ./jenkins-nodejs
+            docker push localhost:32000/jenkins-slave-node:latest
+        """)
+    }
+}
