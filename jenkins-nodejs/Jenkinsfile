@@ -1,4 +1,4 @@
-node('jenkins-slave') {
+node('jenkins-slave-maven-jdk-11') {
 
     stage('checkout scm') {
         checkout scm
